@@ -19,8 +19,8 @@
             --text-dark: #111111;
             --text-muted: #777777;
             --border: #F0F0F0;
-            --transition-premium: 1.4s cubic-bezier(0.19, 1, 0.22, 1);
-            --transition-smooth: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-premium: 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -39,7 +39,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Scroll Progress Bar --- */
+        /* --- Global Scroll Progress --- */
         #scroll-progress {
             position: fixed; top: 0; left: 0; width: 0%; height: 5px;
             background: var(--yellow); z-index: 9999;
@@ -55,13 +55,13 @@
         /* --- REVEAL ANIMATIONS --- */
         .reveal { 
             opacity: 0; 
-            transform: translateY(80px) scale(0.98); 
+            transform: translateY(60px); 
             transition: var(--transition-premium); 
             will-change: transform, opacity;
         }
         .reveal.in-view { 
             opacity: 1; 
-            transform: translateY(0) scale(1); 
+            transform: translateY(0); 
         }
         
         .stagger-1 { transition-delay: 0.1s; }
@@ -95,23 +95,23 @@
         }
         .btn-premium-nav:hover { background: var(--yellow); color: var(--navy); transform: translateY(-3px); }
         
-        .mobile-toggle { display: none; cursor: pointer; }
-        .mobile-toggle div { width: 25px; height: 2px; background: var(--navy); margin: 6px; }
+        .mobile-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .mobile-toggle div { width: 25px; height: 2px; background: var(--navy); transition: 0.4s; }
 
         /* --- Hero Section --- */
         .hero {
             height: 100vh; 
-            background: linear-gradient(rgba(15, 26, 47, 0.7), rgba(15, 26, 47, 0.7)), url('https://i.postimg.cc/qRmhH6Cm/image.png');
+            background: linear-gradient(rgba(15, 26, 47, 0.75), rgba(15, 26, 47, 0.75)), url('https://i.postimg.cc/qRmhH6Cm/image.png');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: var(--white); display: flex; align-items: center; justify-content: center;
             text-align: center; overflow: hidden;
         }
-        .hero-content h1 { font-size: clamp(80px, 16vw, 200px); color: var(--yellow); filter: drop-shadow(0 10px 40px rgba(0,0,0,0.5)); }
-        .hero-content .sub-h1 { font-size: clamp(40px, 8vw, 100px); margin-top: -15px; }
-        .hero-content p { font-size: clamp(14px, 2vw, 18px); font-weight: 300; opacity: 0.8; margin: 35px 0; letter-spacing: 0.2em; text-transform: uppercase; }
+        .hero-content h1 { font-size: clamp(60px, 14vw, 180px); color: var(--yellow); filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); }
+        .hero-content .sub-h1 { font-size: clamp(35px, 8vw, 90px); margin-top: -10px; }
+        .hero-content p { font-size: clamp(13px, 1.8vw, 18px); font-weight: 300; opacity: 0.9; margin: 30px 0; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 5%; }
         
         .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn-xl { padding: 22px 55px; font-family: 'Bebas Neue', sans-serif; font-size: 26px; text-decoration: none; transition: 0.5s var(--transition-smooth); border: 2px solid transparent; }
+        .btn-xl { padding: 20px 50px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; text-decoration: none; transition: 0.5s var(--transition-smooth); border: 2px solid transparent; }
         .btn-xl.yellow { background: var(--yellow); color: var(--navy); }
         .btn-xl.outline { border-color: var(--white); color: var(--white); }
         .btn-xl:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
@@ -120,48 +120,31 @@
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--navy-mid); padding: 100px 5%; gap: 40px; }
         .stat-item { text-align: center; border-right: 1px solid rgba(255,255,255,0.05); }
         .stat-item:last-child { border-right: none; }
-        .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(50px, 7vw, 110px); color: var(--white); line-height: 1; }
+        .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 6vw, 90px); color: var(--white); line-height: 1; }
         .stat-num span { color: var(--yellow); }
         .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: rgba(255,255,255,0.4); margin-top: 15px; }
 
-        /* --- School Grid: TAGDI LINE BACKGROUND ANIMATION --- */
-        .school-selection h2 { font-size: clamp(50px, 9vw, 110px); color: var(--navy); margin-bottom: 60px; }
+        /* --- School Grid: TAGDI SLIDING YELLOW BACK & LINE --- */
+        .school-selection h2 { font-size: clamp(40px, 9vw, 110px); color: var(--navy); margin-bottom: 60px; }
         .school-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: var(--border); border: 2px solid var(--border); }
         
         .school-card { 
             background: var(--white); 
             padding: 60px 20px; 
             text-align: center; 
-            transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); 
+            transition: 0.7s var(--transition-premium); 
             cursor: pointer; 
             position: relative; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            min-height: 380px;
-            overflow: hidden; /* Important for background line */
+            min-height: 400px;
+            overflow: hidden; 
         }
 
-        /* The Tagdi Yellow Line/Background Animation */
+        /* The Tagdi Yellow Background Slide */
         .school-card::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: var(--yellow);
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 0;
-        }
-
-        .school-card:hover::before {
-            height: 10px; /* Strong solid yellow line at bottom */
-        }
-
-        /* Subtle Background Fill */
-        .school-card::after {
             content: '';
             position: absolute;
             top: 0;
@@ -169,59 +152,63 @@
             width: 100%;
             height: 100%;
             background: var(--yellow-soft);
-            opacity: 0;
-            transition: 0.5s ease;
+            transform: translateY(100%);
+            transition: 0.6s var(--transition-premium);
             z-index: 0;
         }
+        .school-card:hover::before { transform: translateY(0); }
 
-        .school-card:hover::after {
-            opacity: 1;
+        /* The Tagdi Yellow Bottom Line */
+        .school-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--yellow);
+            transition: 0.5s var(--transition-premium);
+            z-index: 2;
         }
+        .school-card:hover::after { height: 10px; }
 
         .school-logo-img { 
-            height: 120px; 
+            height: 140px; 
             width: 100%; 
             object-fit: contain; 
             margin-bottom: 30px; 
-            transition: 0.5s var(--transition-smooth);
+            transition: 0.6s var(--transition-premium);
             position: relative;
-            z-index: 2;
-            filter: none; /* Keep original colors */
+            z-index: 1;
+            filter: none;
         }
-        .school-card:hover .school-logo-img { 
-            transform: scale(1.1) translateY(-5px);
-        }
+        .school-card:hover .school-logo-img { transform: scale(1.1) translateY(-10px); }
         
         .school-card span { 
             font-family: 'Bebas Neue', sans-serif; 
-            font-size: 24px; 
+            font-size: 26px; 
             color: var(--navy); 
             text-transform: uppercase; 
             letter-spacing: 0.05em; 
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
         
-        /* 100+ Schools Card - Consistent Animation */
+        /* 100+ SCHOOLS CARD HOVER */
         .school-card.plus-highlight { 
             background: var(--navy); 
             border: 3px solid var(--yellow); 
             justify-content: center; 
         }
         .school-card.plus-highlight span { color: var(--yellow); font-size: 36px; }
-        .school-card.plus-highlight svg { 
-            width: 70px; height: 70px; fill: var(--yellow); 
-            margin-bottom: 25px; transition: 0.4s; 
-            position: relative; z-index: 2;
-        }
-        .school-card.plus-highlight:hover::before {
-            background: var(--white); /* Contrasting line for navy card */
-        }
-        .school-card.plus-highlight:hover {
-            transform: translateY(-10px);
-        }
+        .school-card.plus-highlight svg { width: 70px; height: 70px; fill: var(--yellow); margin-bottom: 25px; transition: 0.6s var(--transition-premium); position: relative; z-index: 1; }
+        
+        .school-card.plus-highlight:hover::before { background: var(--yellow); }
+        .school-card.plus-highlight:hover span { color: var(--navy); }
+        .school-card.plus-highlight:hover svg { fill: var(--navy); transform: scale(1.1) rotate(10deg); }
+        .school-card.plus-highlight:hover::after { background: var(--navy); }
 
-        /* --- KINETIC SECTION --- */
+        /* --- HYPER PREMIUM KINETIC SECTION --- */
         .kinetic-premium { 
             background: var(--navy); color: var(--white); 
             padding: 220px 5%; overflow: hidden; 
@@ -229,8 +216,8 @@
         }
         .ghost-marquee { 
             position: absolute; top: 50%; left: 0; transform: translateY(-50%);
-            display: flex; gap: 60px; font-family: 'Bebas Neue', sans-serif; font-size: 22vw;
-            color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.06);
+            display: flex; gap: 60px; font-family: 'Bebas Neue', sans-serif; font-size: 24vw;
+            color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
             white-space: nowrap; pointer-events: none; z-index: 0;
             animation: marquee-infinite 35s linear infinite;
         }
@@ -238,17 +225,17 @@
             0% { transform: translate(0, -50%); }
             100% { transform: translate(-50%, -50%); }
         }
-        .kinetic-label { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(50px, 10vw, 100px); color: var(--white); opacity: 0.4; margin-bottom: -30px; position: relative; z-index: 2; }
-        .word-roll-box { height: clamp(100px, 20vw, 240px); overflow: hidden; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; }
+        .kinetic-label { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(40px, 10vw, 110px); color: var(--white); opacity: 0.4; margin-bottom: -30px; position: relative; z-index: 2; }
+        .word-roll-box { height: clamp(80px, 20vw, 240px); overflow: hidden; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; }
         .kinetic-word { 
             font-family: 'Bebas Neue', sans-serif; 
-            font-size: clamp(100px, 20vw, 240px); 
+            font-size: clamp(80px, 18vw, 240px); 
             color: var(--yellow); 
             will-change: transform;
-            transition: 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+            transition: 0.9s cubic-bezier(0.8, 0, 0.2, 1);
         }
 
-        /* --- MAGAZINE STYLE PALJI QUALITY SECTION --- */
+        /* --- MAGAZINE STYLE PALJI SPOTLIGHT --- */
         .palji-section-premium { 
             background: var(--off-white); 
             display: flex; align-items: stretch; flex-wrap: wrap; 
@@ -257,52 +244,54 @@
         .palji-bg-ghost {
             position: absolute; left: -5%; top: 50%; transform: translateY(-50%);
             font-family: 'Bebas Neue', sans-serif; font-size: 35vw;
-            color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.03);
+            color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.02);
             pointer-events: none; z-index: 0;
         }
         .palji-content-v2 { 
-            flex: 1.2; min-width: 400px; padding: 120px 80px; 
+            flex: 1.2; min-width: 320px; padding: clamp(60px, 10vw, 120px) 5%; 
             display: flex; flex-direction: column; justify-content: center; 
             position: relative; z-index: 2;
         }
         .palji-tag-wrap { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
-        .palji-line-anim { width: 60px; height: 3px; background: var(--yellow); transition: 1s ease; }
-        .palji-section-premium.in-view .palji-line-anim { width: 120px; }
+        .palji-line-anim { width: 60px; height: 3px; background: var(--yellow); transition: 1.2s var(--ease-in-out); }
+        .palji-section-premium.in-view .palji-line-anim { width: clamp(80px, 10vw, 140px); }
         
-        .palji-content-v2 h2 { font-size: clamp(70px, 12vw, 140px); color: var(--navy); line-height: 0.85; margin-bottom: 30px; }
-        .palji-content-v2 p { font-size: 20px; line-height: 1.8; color: var(--text-muted); font-weight: 300; max-width: 600px; margin-bottom: 50px; }
+        .palji-content-v2 h2 { font-size: clamp(60px, 10vw, 120px); color: var(--navy); line-height: 0.85; margin-bottom: 30px; }
+        .palji-content-v2 p { font-size: clamp(17px, 2vw, 20px); line-height: 1.8; color: var(--text-muted); font-weight: 300; max-width: 600px; margin-bottom: 50px; }
         
         .palji-visual-v2 { 
-            flex: 0.8; min-width: 400px; min-height: 700px; 
-            padding: 40px; position: relative; z-index: 2;
+            flex: 0.8; min-width: 320px; min-height: 600px; 
+            padding: 5%; position: relative; z-index: 2;
             display: flex; align-items: center; justify-content: center;
         }
         .palji-image-frame {
             width: 100%; height: 100%; position: relative;
-            box-shadow: 30px 30px 0 var(--yellow);
-            overflow: hidden; transition: 0.8s ease;
+            box-shadow: 40px 40px 0 var(--yellow);
+            overflow: hidden; transition: 1s var(--transition-premium);
         }
         .palji-image-frame img { 
             width: 100%; height: 100%; object-fit: cover; 
-            transition: 2.5s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: 3s var(--transition-premium);
             transform: scale(1.15);
         }
         .palji-section-premium.in-view .palji-image-frame img { transform: scale(1); }
         
         .palji-legacy-sticker {
-            position: absolute; bottom: 60px; right: 0;
+            position: absolute; bottom: 10%; right: 0;
             background: var(--navy); color: var(--yellow);
-            padding: 25px 40px; font-family: 'Bebas Neue', sans-serif;
-            font-size: 32px; letter-spacing: 0.1em; transform: rotate(-5deg);
-            box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+            padding: 25px 45px; font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(24px, 4vw, 36px); letter-spacing: 0.1em; transform: rotate(-5deg);
+            box-shadow: 15px 15px 40px rgba(0,0,0,0.25);
+            transition: 0.4s;
+            z-index: 3;
         }
 
-        /* --- Engineered Excellence --- */
+        /* --- Engineered Excellence: SOLID OFFSET HOVER RESTORED --- */
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
         .feature-item { 
             padding: 60px 40px; 
             border: 1px solid var(--border); 
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            transition: 0.5s var(--transition-smooth); 
             background: var(--white); 
             text-align: left;
             position: relative;
@@ -310,19 +299,19 @@
         .feature-item:hover { 
             transform: translate(-15px, -15px); 
             border: 2px solid var(--yellow); 
-            box-shadow: 15px 15px 0 var(--yellow); 
+            box-shadow: 15px 15px 0 var(--yellow); /* Solid Offset Shadow */
             z-index: 5;
         }
-        .feature-item svg { width: 45px; height: 45px; margin-bottom: 25px; stroke: var(--navy); fill: none; stroke-width: 1.5; transition: 0.3s; }
+        .feature-item svg { width: 40px; height: 40px; margin-bottom: 25px; stroke: var(--navy); fill: none; stroke-width: 1.5; transition: 0.3s; }
         .feature-item:hover svg { stroke: var(--yellow); transform: scale(1.1); }
         .feature-item h3 { font-size: 32px; color: var(--navy); margin-bottom: 15px; }
         .feature-item p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
-        /* --- HUGE CONTACT: HYPER SMOOTH --- */
-        .huge-contact { text-align: center; padding: 200px 5%; background: var(--white); overflow: hidden; }
+        /* --- HUGE CONTACT: NO-WRAP & SMOOTH --- */
+        .huge-contact { text-align: center; padding: clamp(100px, 15vw, 200px) 5%; background: var(--white); overflow: hidden; }
         .huge-phone { 
             font-family: 'Bebas Neue', sans-serif; 
-            font-size: clamp(45px, 15vw, 260px); 
+            font-size: clamp(35px, 14vw, 260px); 
             color: var(--navy); text-decoration: none; 
             line-height: 0.8; 
             transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
@@ -330,39 +319,48 @@
             white-space: nowrap; 
             will-change: transform, color, letter-spacing;
         }
-        .huge-phone:hover { color: var(--yellow); transform: scale(1.03); letter-spacing: 0.015em; }
+        .huge-phone:hover { color: var(--yellow); transform: scale(1.04); letter-spacing: 0.02em; }
 
         /* --- Footer --- */
         footer { background: var(--navy); color: var(--white); padding: 120px 5% 50px; text-align: center; }
-        .footer-logo-img { height: 130px; width: auto; margin-bottom: 20px; }
-        .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--yellow); margin-bottom: 60px; display: block; opacity: 0.8; }
-        .footer-links { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 60px; }
-        .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 14px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; transition: 0.3s; }
+        .footer-logo-img { height: clamp(90px, 12vw, 130px); width: auto; margin-bottom: 20px; }
+        .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(16px, 2.5vw, 22px); color: var(--yellow); margin-bottom: 60px; display: block; opacity: 0.8; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 60px; }
+        .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; transition: 0.3s; }
         .footer-links a:hover { color: var(--white); transform: translateY(-5px); }
         .copyright { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.3em; margin-top: 80px; text-transform: uppercase; }
 
-        @media (max-width: 900px) {
-            .nav-links, .nav-actions { display: none; }
-            .mobile-toggle { display: block; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .stat-item { border-right: none; }
-            .features-grid { grid-template-columns: 1fr; }
-            section { padding: 100px 5%; }
-            .palji-content-v2 { padding: 60px 40px; text-align: center; }
-            .palji-tag-wrap { justify-content: center; }
-            .palji-visual-v2 { min-height: 450px; }
-            .huge-phone { font-size: 12vw; }
-            .palji-bg-ghost { display: none; }
-            .school-logo-img { height: 100px; }
+        /* --- Mobile Overrides --- */
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+        @media (max-width: 768px) {
+            nav { height: 75px; }
+            .nav-links, .nav-actions .btn-premium-nav { display: none; }
+            .mobile-toggle { display: flex; }
+            section { padding: 80px 5%; }
+            .stats-grid { gap: 20px; }
+            .stat-item { border-right: none; }
+            .features-grid { grid-template-columns: 1fr; }
+            .palji-content-v2 { text-align: center; min-width: 100%; padding: 60px 5%; }
+            .palji-tag-wrap { justify-content: center; }
+            .palji-visual-v2 { min-height: 400px; min-width: 100%; }
+            .palji-image-frame { box-shadow: 20px 20px 0 var(--yellow); }
+            .palji-legacy-sticker { bottom: 0; right: 5%; }
+            .palji-bg-ghost { display: none; }
+        }
+
+        /* Mobile Menu */
         .mobile-nav { 
-            position: fixed; top: 0; right: -100%; width: 85%; height: 100%; 
-            background: var(--navy); z-index: 9999; transition: 0.6s var(--transition-premium);
-            display: flex; flex-direction: column; padding: 120px 50px; gap: 40px;
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100%; 
+            background: var(--navy); z-index: 9999; transition: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 35px;
         }
         .mobile-nav.active { right: 0; }
-        .mobile-nav a { color: var(--white); text-decoration: none; font-size: 32px; font-family: 'Bebas Neue', sans-serif; }
+        .mobile-nav a { color: var(--white); text-decoration: none; font-size: 36px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }
+        .mobile-close { position: absolute; top: 25px; right: 5%; color: var(--white); font-size: 30px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -382,19 +380,20 @@
         </div>
         <div class="nav-actions">
             <a href="tel:+9194150XXXXX" class="btn-premium-nav">Enquire Bulk</a>
-        </div>
-        <div class="mobile-toggle" id="menu-btn">
-            <div></div><div></div><div></div>
+            <div class="mobile-toggle" id="menu-btn">
+                <div></div><div></div><div></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div class="mobile-nav" id="mobile-menu">
+        <div class="mobile-close" id="menu-close">✕</div>
         <a href="#about" onclick="toggleMenu()">About Legacy</a>
         <a href="#schools" onclick="toggleMenu()">Partner Schools</a>
         <a href="#products" onclick="toggleMenu()">Products</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
-        <a href="tel:+9194150XXXXX" onclick="toggleMenu()" style="color: var(--yellow)">Call Now</a>
+        <a href="tel:+9194150XXXXX" style="color: var(--yellow)">Call Now</a>
     </div>
 
     <!-- Hero Section -->
@@ -431,7 +430,7 @@
         </div>
     </div>
 
-    <!-- School Selection Grid: ORIGINAL COLORS & TAGDI LINE HOVER -->
+    <!-- School Selection Grid -->
     <section id="schools" class="school-selection">
         <div class="container">
             <span class="section-tag reveal">Select Institution</span>
@@ -473,7 +472,7 @@
                     <img src="https://i.postimg.cc/fWVg0Fhw/logo-removebg-preview.png" alt="Shri Gurunanak School Logo" class="school-logo-img">
                     <span>Shri Gurunanak school</span>
                 </div>
-                <!-- 8th Place: 100+ Schools Highlight -->
+                <!-- 8th Place Highlight -->
                 <div class="school-card reveal stagger-4 plus-highlight">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     <span>100+ Schools</span>
@@ -531,16 +530,19 @@
         <h2 class="reveal stagger-1" style="font-size: 70px; color: var(--navy);">Engineered Excellence</h2>
         <div class="features-grid">
             <div class="feature-item reveal stagger-1">
+                <!-- Hexagon Icon -->
                 <svg viewBox="0 0 24 24"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z"/></svg>
                 <h3>In-House Facility</h3>
                 <p>Zero outsourcing. Every single piece is stitched right here in Gonda under strict multi-point supervision.</p>
             </div>
             <div class="feature-item reveal stagger-2">
+                <!-- Shield Icon -->
                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 <h3>Yarn to Uniform</h3>
                 <p>We source premium fibers and turn them into finished garments. Absolute control over quality.</p>
             </div>
             <div class="feature-item reveal stagger-3">
+                <!-- Person Icon -->
                 <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 <h3>Generational Legacy</h3>
                 <p>Since 1956, three generations of parents in Gonda have trusted Pal Garments for their kids.</p>
@@ -548,7 +550,7 @@
         </div>
     </section>
 
-    <!-- HUGE CONTACT: HYPER SMOOTH -->
+    <!-- HUGE CONTACT -->
     <section id="contact" class="huge-contact">
         <span class="section-tag reveal">Direct Line</span>
         <h2 class="reveal stagger-1">Need assistance? Call us.</h2>
@@ -580,12 +582,15 @@
 
     <script>
         const menuBtn = document.getElementById('menu-btn');
+        const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        
         function toggleMenu() {
             mobileMenu.classList.toggle('active');
-            menuBtn.classList.toggle('active');
         }
+
         menuBtn.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
 
         window.addEventListener('scroll', () => {
             const h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
