@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pal Garments | Gonda's Premier Uniform Brand</title>
-    <!-- Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
@@ -23,7 +22,6 @@
             --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Basic Reset */
         * { 
             margin: 0; 
             padding: 0; 
@@ -43,7 +41,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Scroll Progress Bar --- */
         #scroll-progress {
             position: fixed; 
             top: 0; 
@@ -54,7 +51,6 @@
             z-index: 9999;
         }
 
-        /* Typography */
         h1, h2, h3, h4, .impact-text { 
             font-family: 'Bebas Neue', sans-serif; 
             text-transform: uppercase; 
@@ -79,7 +75,6 @@
             margin: 0 auto; 
         }
 
-        /* --- SNAPPY REVEAL ANIMATIONS (SUPER FAST & PREMIUM) --- */
         .reveal { 
             opacity: 0; 
             transform: translateY(35px) scale(0.99); 
@@ -100,7 +95,6 @@
         .stagger-2 { transition-delay: 0.16s; }
         .stagger-3 { transition-delay: 0.24s; }
 
-        /* --- Navbar --- */
         nav {
             position: fixed; 
             top: 0; 
@@ -210,7 +204,6 @@
             transition: 0.3s; 
         }
 
-        /* --- Hero Section --- */
         .hero {
             height: 100vh; 
             background: linear-gradient(rgba(15, 26, 47, 0.8), rgba(15, 26, 47, 0.8)), url('https://i.postimg.cc/qRmhH6Cm/image.png');
@@ -247,7 +240,6 @@
             font-weight: 400; 
         }
         
-        /* Two Main Premium Hero Buttons with Outstanding Interaction Design */
         .hero-btns { 
             display: flex; 
             gap: 24px; 
@@ -283,10 +275,6 @@
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(10px);
         }
-
-        .btn-xl svg {
-            transition: transform 0.3s ease;
-        }
         
         .btn-xl:hover { 
             transform: translateY(-12px) scale(1.02); 
@@ -305,11 +293,6 @@
             box-shadow: 0 20px 40px rgba(255, 204, 0, 0.25);
         }
 
-        .btn-xl:hover svg {
-            transform: translateX(6px);
-        }
-
-        /* --- Stats Strip --- */
         .stats-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -347,7 +330,6 @@
             margin-top: 15px; 
         }
 
-        /* --- School Grid Section --- */
         .school-selection { 
             background: var(--white); 
         }
@@ -383,7 +365,6 @@
             border: 1px solid var(--border);
         }
         
-        /* Sliding yellow background (Original Responsive Smooth Hover) */
         .school-box:not(.highlight)::before { 
             content: ''; 
             position: absolute; 
@@ -401,7 +382,6 @@
             transform: translateY(0); 
         }
         
-        /* Sliding yellow bottom line (Original Accent Line Hover) */
         .school-box:not(.highlight)::after { 
             content: ''; 
             position: absolute; 
@@ -443,7 +423,6 @@
             text-transform: uppercase; 
         }
         
-        /* 100+ Schools Static Highlight Card */
         .school-box.highlight { 
             background: var(--navy); 
             border: 3px solid var(--yellow); 
@@ -471,7 +450,6 @@
             box-shadow: none; 
         }
 
-        /* --- OUR STRENGTHS SECTION --- */
         .strengths-section { 
             background: var(--off-white); 
             padding: 130px 5%; 
@@ -493,7 +471,6 @@
             position: relative;
         }
         
-        /* Re-established original screenshot-style solid yellow offset shadow hover animation */
         .strength-card:hover { 
             transform: translate(-15px, -15px); 
             border: 2px solid var(--yellow); 
@@ -526,7 +503,6 @@
             line-height: 1.65; 
         }
 
-        /* --- KINETIC SECTION --- */
         .kinetic-premium { 
             background: var(--navy); color: var(--white); 
             padding: 220px 5%; overflow: hidden; 
@@ -596,7 +572,6 @@
             z-index: 2; 
         }
 
-        /* --- BULK ORDERS & WHOLESALE SUPPLY SECTION --- */
         .bulk-wholesale-section { 
             background: var(--off-white); 
             text-align: center; 
@@ -634,7 +609,6 @@
             letter-spacing: 0.05em; 
         }
 
-        /* --- Brand Spotlight --- */
         .palji-section-premium { 
             background: var(--white); 
             display: flex; 
@@ -702,7 +676,6 @@
             transform: scale(1.1); 
         }
 
-        /* --- HUGE CONTACT SECTION (Bulletproof Non-Wrapping) --- */
         .huge-contact { 
             text-align: center; 
             padding: 190px 5%; 
@@ -728,7 +701,6 @@
             letter-spacing: 0.02em; 
         }
 
-        /* --- Footer --- */
         footer { 
             background: var(--navy); 
             color: var(--white); 
@@ -736,10 +708,18 @@
             text-align: center; 
         }
         
+        .footer-logo-wrap {
+            display: inline-block;
+            background: var(--white);
+            padding: 22px 28px;
+            margin-bottom: 30px;
+            border-radius: 50%;
+            line-height: 0;
+        }
+        
         .footer-logo-img { 
-            height: clamp(90px, 13vw, 140px); 
+            height: clamp(90px, 13vw, 120px); 
             width: auto; 
-            margin-bottom: 30px; 
             object-fit: contain; 
         }
         
@@ -794,7 +774,6 @@
             margin-bottom: 30px; 
         }
 
-        /* Mobile Nav Menu Overlay */
         .mobile-nav { 
             position: fixed; 
             top: 0; 
@@ -832,7 +811,6 @@
             cursor: pointer; 
         }
 
-        /* --- Floating Action Buttons (WA & Phone) --- */
         .floating-action-buttons {
             position: fixed;
             bottom: 30px;
@@ -872,7 +850,6 @@
             fill: currentColor;
         }
 
-        /* --- MOBILE DENSITY & RESPONSIVENESS OVERRIDES (image_08dd2d.jpg matching) --- */
         @media (max-width: 1100px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .strengths-grid { grid-template-columns: repeat(2, 1fr); }
@@ -885,7 +862,6 @@
             .nav-logo-text { font-size: 22px; }
             .nav-logo-img { height: 50px; }
             
-            /* Snug section paddings on mobile to minimize excessive scrolling */
             section { padding: 60px 4% !important; }
             .hero { padding-top: 110px; }
             .hero-content h1 { line-height: 0.95; margin-bottom: 20px; font-size: 52px; }
@@ -904,11 +880,9 @@
                 justify-content: center; 
             }
             
-            /* Snug Stats Strip */
             .stats-grid { gap: 20px; padding: 40px 5% !important; }
             .stat-item { border-right: none; }
             
-            /* 3-Column Compact Logo Grid precisely matching image_08dd2d.jpg */
             .school-main-grid {
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 2px !important;
@@ -930,12 +904,10 @@
                 margin-bottom: 0px !important;
             }
             
-            /* Hide school name text on mobile to recreate pure logo blocks of image_08dd2d.jpg */
             .school-box:not(.highlight) span {
                 display: none !important;
             }
             
-            /* Extremely snug highlight badge at position 8 */
             .school-box.highlight {
                 background: var(--navy);
                 border: none !important;
@@ -959,7 +931,6 @@
                 display: block !important;
             }
 
-            /* Compact Strengths Section - 2-Column instead of stack to avoid miles of scroll */
             .strengths-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 15px !important;
@@ -994,7 +965,6 @@
                 line-height: 1.5 !important;
             }
 
-            /* Compact Kinetic, Spotlight, and Contacts */
             .kinetic-premium {
                 padding: 100px 5% !important;
             }
@@ -1022,6 +992,9 @@
                 font-size: clamp(35px, 10vw, 70px) !important; 
                 margin: 30px 0 !important; 
             }
+
+            .footer-logo-wrap { padding: 16px 20px; margin-bottom: 25px; }
+            .footer-logo-img { height: 80px; }
             
             footer {
                 padding: 80px 5% 40px !important;
@@ -1037,7 +1010,6 @@
 
     <div id="scroll-progress"></div>
 
-    <!-- Navbar -->
     <nav id="navbar">
         <a href="index.html" class="nav-logo-container">
             <img src="https://i.postimg.cc/QxSX4Z1q/image-Photoroom.png" alt="Pal Garments Logo" class="nav-logo-img">
@@ -1057,7 +1029,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-menu">
         <div class="mobile-close" id="menu-close">✕</div>
         <a href="about.html" onclick="toggleMenu()">About Legacy</a>
@@ -1067,28 +1038,19 @@
         <a href="tel:+918175933212" style="color: var(--yellow)">Call Now</a>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <span class="section-tag reveal">Established 1956</span>
             <h1 class="reveal stagger-1">ADMISSION HO GYA?</h1>
             <h2 class="sub-h1 reveal stagger-2">Uniform ki tension <br>hum pe chhor Dijiye</h2>
             
-            <!-- Restored original two beautiful primary buttons with sleek layout -->
             <div class="hero-btns reveal stagger-3">
-                <a href="contact.html" class="btn-xl yellow">
-                    <span>Your One Stop Solution for All School Needs</span>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-                <a href="contact.html" class="btn-xl outline">
-                    <span>From uniforms to accessories – everything under one roof</span>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+                <span class="btn-xl yellow">Your One Stop Solution for All School Needs</span>
+                <span class="btn-xl outline">From uniforms to accessories – everything under one roof</span>
             </div>
         </div>
     </section>
 
-    <!-- Stats Strip -->
     <div class="stats-grid">
         <div class="stat-item reveal">
             <div class="stat-num" data-target="68">0<span>+</span></div>
@@ -1108,50 +1070,45 @@
         </div>
     </div>
 
-    <!-- Partner Schools Section (Exactly 7 Schools + 1 Highlight Card) -->
     <section id="schools" class="school-selection">
         <div class="container">
             <span class="section-tag reveal">Our Partners</span>
             <h2 class="reveal stagger-1">Proudly Serving <br>Renowned Institutions</h2>
             
             <div class="school-main-grid">
-                <!-- 1. Fatima School -->
                 <div class="school-box reveal stagger-1" onclick="location.href='schools.html'">
                     <img src="https://i.postimg.cc/L5J53S3W/image.png" alt="Fatima" class="school-logo-img">
                     <span class="school-name">Fatima School</span>
                 </div>
-                <!-- 2. Rosewood School -->
                 <div class="school-box reveal stagger-2" onclick="location.href='schools.html'">
-                    <img src="https://i.postimg.cc/fRC3s8yv/image.png" alt="Rosewood" class="school-logo-img">
+                    <img src="https://imgh.in/host/6j23zb" alt="Rosewood" class="school-logo-img">
                     <span class="school-name">Rosewood School</span>
                 </div>
-                <!-- 3. Shri Raghukul Vidhya Peeth -->
                 <div class="school-box reveal stagger-3" onclick="location.href='schools.html'">
-                    <img src="https://i.postimg.cc/qMXqc18F/image.png" alt="Raghukul" class="school-logo-img">
+                    <img src="https://imgh.in/host/uapvkz" alt="Raghukul" class="school-logo-img">
                     <span class="school-name">Shri Raghukul Vidhya Peeth</span>
                 </div>
-                <!-- 4. Sunbeam School -->
                 <div class="school-box reveal stagger-1" onclick="location.href='schools.html'">
                     <img src="https://i.postimg.cc/WpmTxhhD/image.png" alt="Sunbeam" class="school-logo-img">
                     <span class="school-name">Sunbeam School</span>
                 </div>
-                <!-- 5. Ravi Children School -->
                 <div class="school-box reveal stagger-2" onclick="location.href='schools.html'">
                     <img src="https://i.postimg.cc/prPbPJpf/image.png" alt="Ravi" class="school-logo-img">
                     <span class="school-name">Ravi Children School</span>
                 </div>
-                <!-- 6. Alhuda Public -->
                 <div class="school-box reveal stagger-3" onclick="location.href='schools.html'">
                     <img src="https://i.postimg.cc/mZm6csqT/unnamed.jpg" alt="Alhuda" class="school-logo-img">
                     <span class="school-name">Alhuda Public</span>
                 </div>
-                <!-- 7. Shri Gurunanak School -->
                 <div class="school-box reveal stagger-1" onclick="location.href='schools.html'">
-                    <img src="https://i.postimg.cc/fWVg0Fhw/logo-removebg-preview.png" alt="Gurunanak" class="school-logo-img">
-                    <span class="school-name">Shri Gurunanak school</span>
+                    <img src="https://imgh.in/host/mu50t0" alt="Gurunanak" class="school-logo-img">
+                    <span class="school-name">Shri Gurunanak School</span>
                 </div>
-                <!-- 8. Highlight Badge -->
-                <div class="school-box highlight reveal stagger-2">
+                <div class="school-box reveal stagger-2" onclick="location.href='schools.html'">
+                    <img src="https://imgh.in/host/465go3" alt="STVMIC" class="school-logo-img">
+                    <span class="school-name">STVMIC</span>
+                </div>
+                <div class="school-box highlight reveal stagger-3">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     <span class="school-name">Serving 100+ Schools with Pride</span>
                 </div>
@@ -1159,7 +1116,6 @@
         </div>
     </section>
 
-    <!-- OUR STRENGTHS SECTION (Premium Hexagonal Hover Offset Integrated) -->
     <section id="why-pal" class="strengths-section">
         <div class="container">
             <span class="section-tag reveal">Why Pal Garments?</span>
@@ -1193,7 +1149,6 @@
         </div>
     </section>
 
-    <!-- KINETIC SECTION (Marquee + Roll-up swapper) -->
     <section class="kinetic-premium">
         <div class="ghost-marquee">PALJI QUALITY · GONDA PRIDE · ESTABLISHED 1956 · PALJI QUALITY · GONDA PRIDE · ESTABLISHED 1956 · PALJI QUALITY · GONDA PRIDE · ESTABLISHED 1956</div>
         <div class="kinetic-label reveal">we are</div>
@@ -1203,24 +1158,22 @@
         <p class="kinetic-description reveal stagger-1">From the finest fabric to the final stitch, every detail is crafted to deliver the best for your child.</p>
     </section>
 
-    <!-- BULK ORDERS & WHOLESALE SUPPLY SECTION -->
     <section class="bulk-wholesale-section">
         <div class="container reveal">
             <span class="section-tag" style="color:var(--yellow)">Partnerships</span>
             <h2>Bulk Orders & Wholesale Supply</h2>
-            <p>We handle bulk uniform orders with consistent quality, timely delivery, and competitive wholesale pricing — customized to meet every school’s requirements.</p>
+            <p>We handle bulk uniform orders with consistent quality, timely delivery, and competitive wholesale pricing — customized to meet every school's requirements.</p>
             <a href="contact.html" class="wholesale-link">Get Wholesale Pricing</a>
         </div>
     </section>
 
-    <!-- Brand Spotlight -->
     <section id="about" class="palji-section-premium">
         <div class="palji-content-v2">
             <span class="brand-behind-title reveal">Brand behind the uniform</span>
             <span class="section-tag reveal stagger-1" style="color: var(--yellow); margin-bottom: 20px;">Our Signature Quality</span>
             <img src="https://i.postimg.cc/k5RqxX47/image.png" alt="Palji Brand Logo" class="palji-brand-logo reveal stagger-2">
             <p class="reveal stagger-3">
-                Under our proprietary brand <span style="font-weight:700; color:var(--navy)">‘Palji’</span>, we create school uniforms that combine durability, comfort, and a perfect fit. With complete in-house textile manufacturing, we ensure strict quality control at every stage — from fabric selection to final finishing.
+                Under our proprietary brand <span style="font-weight:700; color:var(--navy)">'Palji'</span>, we create school uniforms that combine durability, comfort, and a perfect fit. With complete in-house textile manufacturing, we ensure strict quality control at every stage — from fabric selection to final finishing.
             </p>
         </div>
         <div class="palji-visual-v2 reveal stagger-2">
@@ -1230,7 +1183,6 @@
         </div>
     </section>
 
-    <!-- HUGE CONTACT SECTION -->
     <section id="contact" class="huge-contact">
         <span class="section-tag reveal">Direct Line</span>
         <h2 class="reveal stagger-1">Need assistance? Call us.</h2>
@@ -1240,10 +1192,11 @@
         </div>
     </section>
 
-    <!-- Footer with Vedonyx Integration -->
     <footer>
         <div class="reveal">
-            <img src="https://i.postimg.cc/QxSX4Z1q/image-Photoroom.png" alt="Footer Logo" class="footer-logo-img">
+            <div class="footer-logo-wrap">
+                <img src="https://i.postimg.cc/QxSX4Z1q/image-Photoroom.png" alt="Footer Logo" class="footer-logo-img">
+            </div>
         </div>
         <span class="footer-tagline reveal italic-serif stagger-1">Where Every Stitch Tells a Story of Quality</span>
         <div class="footer-links reveal stagger-2">
@@ -1257,15 +1210,12 @@
         </div>
     </footer>
 
-    <!-- Fixed Floating Action Buttons (WhatsApp & Call) exactly as per Uniformers screenshots -->
     <div class="floating-action-buttons">
-        <!-- WhatsApp Button -->
         <a href="https://wa.me/918175933212" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp Us">
             <svg viewBox="0 0 24 24">
                 <path d="M12.012 2C6.485 2 2 6.485 2 12.012c0 1.767.46 3.427 1.267 4.887L2 22l5.22-.1.21-.11a9.96 9.96 0 0 0 4.582 1.22c5.527 0 10.012-4.485 10.012-10.012S17.539 2 12.012 2zm6.273 14.153c-.25.7-1.42 1.3-1.95 1.37-.48.07-1.1.1-3.23-.73-2.73-1.05-4.49-3.83-4.63-4.01-.13-.19-1.12-1.49-1.12-2.85 0-1.36.7-2.03.95-2.31.25-.27.55-.34.73-.34l.52.01c.17 0 .4.01.58.42.2.47.68 1.66.74 1.78.06.12.1.27.02.44-.08.17-.12.27-.24.42-.12.15-.26.33-.37.44-.12.12-.25.25-.11.48.14.23.63 1.04 1.35 1.68.93.83 1.71 1.08 1.95 1.2.24.12.38.1.52-.06.14-.17.61-.71.77-.95.16-.24.32-.2.54-.12s1.42.67 1.66.79c.24.12.4.18.46.28.06.07.06.41-.19 1.11z"/>
             </svg>
         </a>
-        <!-- Calling Button -->
         <a href="tel:+918175933212" class="fab-btn fab-call" aria-label="Call Us">
             <svg viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.36 11.36 0 0 0 3.58 1.15 1 1 0 0 1 .89 1v3.58a1 1 0 0 1-1.11 1A19.92 19.92 0 0 1 3 4.11 1 1 0 0 1 4 3h3.58a1 1 0 0 1 1 .89 11.36 11.36 0 0 0 1.15 3.58 1 1 0 0 1-.27 1.11z"/>
@@ -1310,7 +1260,7 @@
             if (el.dataset.done) return;
             el.dataset.done = "true";
             const target = parseInt(el.dataset.target);
-            const duration = 2000; // Count animation time optimized
+            const duration = 2000;
             const startTime = performance.now();
             const plusSpan = el.querySelector('span') ? el.querySelector('span').innerText : '';
             function update(now) {
@@ -1342,12 +1292,12 @@
                 kineticEl.offsetHeight; 
                 kineticEl.style.transform = "translateY(0)";
                 kineticEl.style.opacity = 1;
-            }, 300); // Super snappy transition
+            }, 300);
         }, 2500);
 
         window.onload = () => {
             document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-                setTimeout(() => el.classList.add('in-view'), 100 + (i * 100)); // Quicker entry
+                setTimeout(() => el.classList.add('in-view'), 100 + (i * 100));
             });
         };
     </script>
